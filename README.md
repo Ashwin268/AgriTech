@@ -1,1 +1,1 @@
-# Crop-Recommendation-System
+# AgriTech_Crop_recommendation
