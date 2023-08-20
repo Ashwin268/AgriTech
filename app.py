@@ -4,8 +4,8 @@ import numpy as np
 import pandas 
 import sklearn
 
-#importing model
-# model=pickle.load(open('model.pkl','rb'))
+
+
 import os
 
 model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
@@ -13,9 +13,9 @@ model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
 #creating a flask app
-app = Flask(__name__)
+app = Flask(__name__) #This line creates an instance of the Flask class and assigns it to the variable app. This instance represents your Flask web application.
 
-@app.route('/')
+@app.route('/') #root route
 def index():
     return render_template('index.html')
 
@@ -44,4 +44,4 @@ def predict():
 
 # python main
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=7300) # here we use debug = true because if any error occurs then we are telling to show that error in browser itself
